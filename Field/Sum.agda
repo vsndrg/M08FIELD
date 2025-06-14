@@ -1,14 +1,14 @@
-open import Field.Core
-
 open import Agda.Primitive using (Level; lsuc)
 open import Agda.Builtin.Equality
+
+open import Field.Core
 
 module Field.Sum {ℓ : Level} (F : Field ℓ) where
 
 open import Nat.Core
 open Field.Core.Field F
 
-∑ : (el : Carrier) → (n : ℕ) → Carrier
-∑ el 0 = 0#
-∑ el (suc n) = ∑ el n ＋ el
+∑ : (x : Carrier) → (n : ℕ) → Carrier
+∑ x 0 = 0#
+∑ x (suc n) = ∑ x n ＋ x
 
