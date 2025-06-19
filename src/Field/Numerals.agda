@@ -2,11 +2,12 @@ open import Agda.Primitive using (Level; lsuc)
 open import Agda.Builtin.Equality
 
 open import Nat.Core
+
 open import Field.Core
 
-module Field.Numerals {ℓ : Level} (F : Field ℓ) where
+module Field.Numerals {ℓ : Level} (F : Field.Core.Field ℓ) where
 
-  open Field.Core.Field F
+  open Field.Core.Field F public
 
   -- Mapping natural number to a field element function.
   -- ARGUMENTS:
@@ -15,9 +16,9 @@ module Field.Numerals {ℓ : Level} (F : Field ℓ) where
   -- RETURNS:
   --   (Carrier) a field element connected with n.
   --
-  n# : (n : ℕ) → Carrier
-  n# 0 = 0#
-  n# (suc n) = n# n +# 1#
+  f : ℕ → Carrier
+  f 0 = 0#
+  f (suc n) = 1# +# (f n)
 
   -- Multlply field element by natural number operator.
   -- ARGUMENS:
@@ -27,5 +28,6 @@ module Field.Numerals {ℓ : Level} (F : Field ℓ) where
   --   (Carrier) result of multiplication - field element.
   --
   infixl 7 _·_
-  _·_ : (x : Carrier) → (n : ℕ) → Carrier
-  _·_ x n = x *# n# n
+  _·_ : Carrier → ℕ → Carrier
+  _·_ x n = x *# (f n) 
+
