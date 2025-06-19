@@ -5,7 +5,6 @@ open A.≡-Reasoning
 
 open import Nat.Core
 open import Field.Core
-open import Field.Sum
 open import Field.Numerals
 
 module Field.Char {ℓ : Level} (F : Field ℓ) where
