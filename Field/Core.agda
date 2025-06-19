@@ -26,7 +26,7 @@ record Field (ℓ : Level) : Set (lsuc ℓ) where
     Carrier  : Set ℓ
 
     _+#_     : Carrier → Carrier → Carrier
-    _*#_      : Carrier → Carrier → Carrier
+    _*#_     : Carrier → Carrier → Carrier
     -_       : Carrier → Carrier
     _⁻¹      : Carrier → Carrier
 
@@ -38,10 +38,10 @@ record Field (ℓ : Level) : Set (lsuc ℓ) where
     +#-zero  : ∀ a → a +# 0# ≡ a
     +#-inv   : ∀ a → a +# (- a) ≡ 0#
 
-    *#-comm   : ∀ a b → a *# b ≡ b *# a
-    *#-assoc  : ∀ a b c → (a *# b) *# c ≡ a *# (b *# c)
-    *#-id     : ∀ a → a *# 1# ≡ a
-    *#-inv    : ∀ {a} → (a ≡ 0# → ⊥) → a *# (a ⁻¹) ≡ 1#
+    *#-comm  : ∀ a b → a *# b ≡ b *# a
+    *#-assoc : ∀ a b c → (a *# b) *# c ≡ a *# (b *# c)
+    *#-id    : ∀ a → a *# 1# ≡ a
+    *#-inv   : ∀ {a} → (a ≡ 0# → ⊥) → a *# (a ⁻¹) ≡ 1#
 
     distr    : ∀ a b c → (a +# b) *# c ≡ (a *# c) +# (b *# c)
 

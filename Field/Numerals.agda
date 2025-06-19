@@ -27,5 +27,5 @@ module Field.Numerals {ℓ : Level} (F : Field ℓ) where
   --   (Carrier) result of multiplication - field element.
   --
   infixl 7 _·_
-  _·_ : (n : ℕ) → Carrier
-  _·_ n = n# n
+  _·_ : (x : Carrier) → (n : ℕ) → Carrier
+  _·_ x n = x *# n# n

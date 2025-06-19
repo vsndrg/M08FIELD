@@ -11,8 +11,8 @@ module Field.Char {ℓ : Level} (F : Field ℓ) where
 
   open Field.Core.Field F
   
-  is-char-el : (n : ℕ) → (x₀ : Carrier) → Set ℓ
-  is-char-el n x₀ = x₀ · n ≡ 0
+  is-char-el : (x₀ : Carrier) → (n : ℕ) → Set ℓ
+  is-char-el x₀ n = x₀ · n ≡ 0#
   
   -- char-exists : (x : Carrier) → (n : ℕ) → ∑ F x n ≡ 0#
   -- char-exists x n = ∑ F x n ≡ 0#
